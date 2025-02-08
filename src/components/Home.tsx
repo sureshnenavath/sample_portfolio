@@ -1,4 +1,4 @@
-import { ArrowRight, Chip, Trophy, GraduationCap } from 'lucide-react';
+import { ArrowRight, Trophy, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { useRandomColor } from '../hooks/useRandomColor';
@@ -34,12 +34,12 @@ export default function Home() {
   const currentBorderColor = colors[borderColorIndex];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-blue-50 transition-colors duration-500 ease-in-out relative">
-      <div className="container mx-auto px-4 py-32 sm:px-6 lg:px-8 transition-opacity duration-500 ease-in-out mx-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-transform duration-500 ease-in-out">
-          <div className="space-y-8 transition-opacity duration-500 ease-in-out">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-blue-50 relative">
+      <div className="container mx-auto px-4 py-32 sm:px-6 lg:px-8 mx-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8 lg:order-first">
             <div className="space-y-4">
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 font-mono">
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 font-mono fade-in-from-top">
                 Hi, I'm{' '}
                 <span className={`bg-gradient-to-r ${gradientColor} bg-clip-text text-transparent transition-colors duration-1000 font-mono`}>
                   Nenavath Suresh
@@ -52,30 +52,30 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <p className="text-gray-600 leading-relaxed font-mono">
-              A passionate technologist pursuing B.Tech in CSE (Data Science) at Siddhartha Institute of Engineering and Technology. 
-              I specialize in AI/ML, computer vision, and full-stack development, with expertise in Python, React.js, and Node.js. 
+            <p className="text-gray-600 leading-relaxed font-mono fade-in-from-bottom">
+              A passionate technologist pursuing B.Tech in CSE (Data Science) at Siddhartha Institute of Engineering and Technology.
+              I specialize in AI/ML, computer vision, and full-stack development, with expertise in Python, React.js, and Node.js.
               My goal is to enhance my skills while contributing to organizational growth through innovative solutions.
             </p>
-            <div className="flex flex-wrap gap-4 transition-opacity duration-500 ease-in-out">
+            <div className="flex flex-wrap gap-4">
               <Link
                 to="/projects"
-                className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-200 font-mono"
+                className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-200 font-mono scale-up-on-hover"
               >
                 View Projects
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition-colors duration-200 font-mono"
+                className="inline-flex items-center px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition-colors duration-200 font-mono scale-up-on-hover"
               >
                 Get in Touch
               </Link>
             </div>
           </div>
           {/* Responsive Image Container */}
-          <div className="relative transition-opacity duration-500 ease-in-out lg:justify-center lg:items-center">
-            <div className={`relative rounded-full overflow-hidden shadow-2xl border-4 bg-gradient-to-r ${currentBorderColor} transition-colors duration-1000 w-64 h-64 sm:w-72 sm:h-72 lg:w-64 lg:h-64`}>
+          <div className="relative lg:order-none lg:col-start-2 lg:pl-20 lg:ml-24 lg:w-80 lg:h-80"> {/* Increased margin and size */}
+            <div className={`relative rounded-full overflow-hidden shadow-2xl border-4 bg-gradient-to-r ${currentBorderColor} w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80`}> {/* Increased size */}
               <img
                 src="https://res.cloudinary.com/dd6nthams/image/upload/v1738431713/Profesional_photo_nurfda.jpg"
                 alt="Nenavath Suresh"
@@ -88,11 +88,11 @@ export default function Home() {
         </div>
 
         {/* Education & Skills Section */}
-        <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12 transition-opacity duration-500 ease-in-out">
+        <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Education */}
-          <div className="space-y-8 transition-opacity duration-500 ease-in-out">
-            <h3 className="text-2xl font-bold text-gray-900 font-mono">
-              Education <GraduationCap className="inline ml-2 w-6 h-6"/>
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-gray-900 font-mono fade-in-from-left">
+              Education <GraduationCap className="inline ml-2 w-6 h-6" />
             </h3>
             <div className="space-y-6">
               <div className="space-y-2">
@@ -114,9 +114,9 @@ export default function Home() {
           </div>
 
           {/* Technical Skills */}
-          <div className="space-y-8 transition-opacity duration-500 ease-in-out">
-            <h3 className="text-2xl font-bold text-gray-900 font-mono">
-              Technical Skills <Chip className="inline ml-2 w-6 h-6"/>
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-gray-900 font-mono fade-in-from-right">
+              Technical Skills
             </h3>
             <div className="space-y-4">
               <div className="space-y-2">
@@ -133,7 +133,7 @@ export default function Home() {
               </div>
               <div className="space-y-2">
                 <h4 className="font-semibold text-gray-900 font-mono">
-                  Certifications <Trophy className="inline ml-2 w-6 h-6"/>
+                  Certifications <Trophy className="inline ml-2 w-6 h-6" />
                 </h4>
                 <ul className="text-gray-600 list-disc list-inside space-y-2 font-mono">
                   <li>Google Cloud Generative AI Virtual Internship</li>
@@ -145,10 +145,10 @@ export default function Home() {
         </div>
 
         {/* Projects Section */}
-        <div className="mt-24 transition-opacity duration-500 ease-in-out">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 font-mono">Featured Projects</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-opacity duration-500 ease-in-out">
-            <div className="bg-white rounded-lg shadow-lg p-6 space-y-4 transition-opacity duration-500 ease-in-out relative">
+        <div className="mt-24">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 font-mono fade-in-from-bottom">Featured Projects</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg shadow-lg p-6 space-y-4 relative">
               <h4 className="text-xl font-semibold text-gray-900 font-mono">Automated Road Damage Detection</h4>
               <p className="text-gray-600 font-mono">
                 Built a Python application for detecting road damage using UAV images and deep learning models
@@ -158,9 +158,9 @@ export default function Home() {
               <div className="text-sm text-gray-500 font-mono">
                 Technologies: Python 3.7.0, TensorFlow, Keras, OpenCV, YOLO
               </div>
-              <img src="https://source.unsplash.com/random/600x400/?road,damage" alt="Road Damage Detection" className="w-full h-auto mt-4 rounded-lg shadow-md"/>
+              <img src="https://source.unsplash.com/random/600x400/?road,damage" alt="Road Damage Detection" className="w-full h-auto mt-4 rounded-lg shadow-md lazy" loading="lazy"/>
             </div>
-            <div className="bg-white rounded-lg shadow-lg p-6 space-y-4 transition-opacity duration-500 ease-in-out relative">
+            <div className="bg-white rounded-lg shadow-lg p-6 space-y-4 relative">
               <h4 className="text-xl font-semibold text-gray-900 font-mono">Food Munch</h4>
               <p className="text-gray-600 font-mono">
                 A responsive food delivery website with seamless user experience. Features product videos
@@ -169,15 +169,15 @@ export default function Home() {
               <div className="text-sm text-gray-500 font-mono">
                 Technologies: HTML, CSS, Bootstrap
               </div>
-              <a 
-                href="https://foodmunchapp3.ccbp.tech" 
-                target="_blank" 
+              <a
+                href="https://foodmunchapp3.ccbp.tech"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-700 inline-flex items-center font-mono"
+                className="text-purple-600 hover:text-purple-700 inline-flex items-center font-mono scale-up-on-hover"
               >
                 View Project <ArrowRight className="ml-1 w-4 h-4" />
               </a>
-              <img src="https://source.unsplash.com/random/600x400/?food,delivery" alt="Food Munch" className="w-full h-auto mt-4 rounded-lg shadow-md"/>
+              <img src="https://source.unsplash.com/random/600x400/?food,delivery" alt="Food Munch" className="w-full h-auto mt-4 rounded-lg shadow-md lazy" loading="lazy"/>
             </div>
           </div>
         </div>

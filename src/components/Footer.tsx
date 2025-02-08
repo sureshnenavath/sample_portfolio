@@ -1,11 +1,11 @@
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function Footer() {
+export default function Footer({className}: {className?: string}) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className={`bg-gray-900 text-gray-300 ${className}`}>
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
@@ -20,23 +20,23 @@ export default function Footer() {
                 href="https://github.com/sureshnenavath"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors duration-300 ease-in-out"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-5 h-5 animate-pulse" />
               </a>
               <a
                 href="https://www.linkedin.com/in/nenavath-suresh/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors duration-300 ease-in-out"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5 animate-pulse" />
               </a>
               <a
                 href="mailto:sureshnenavath09@gmail.com"
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors duration-300 ease-in-out"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5 animate-pulse" />
               </a>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function Footer() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="block hover:text-white transition-colors"
+                  className="block hover:text-white transition-colors duration-300 ease-in-out"
                 >
                   {link.name}
                 </Link>
@@ -68,15 +68,15 @@ export default function Footer() {
             <h3 className="text-xl font-semibold text-white mb-4">Contact Info</h3>
             <div className="space-y-2">
               <p className="flex items-center">
-                <MapPin className="w-5 h-5 mr-2" />
+                <MapPin className="w-5 h-5 mr-2 animate-pulse" />
                 Hyderabad, India
               </p>
               <p className="flex items-center">
-                <Phone className="w-5 h-5 mr-2" />
+                <Phone className="w-5 h-5 mr-2 animate-pulse" />
                 +91 91773 46580
               </p>
               <p className="flex items-center">
-                <Mail className="w-5 h-5 mr-2" />
+                <Mail className="w-5 h-5 mr-2 animate-pulse" />
                 sureshnenavath09@gmail.com
               </p>
             </div>
