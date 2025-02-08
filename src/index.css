@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cursor Animation Styles */
+.cursor-animation {
+  z-index: 1000; 
+}
+
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.cursor-outline {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.cursor-animation:hover .cursor-dot {
+  transform: scale(1.5);
+  opacity: 0.7;
+}
+
+.cursor-animation:hover .cursor-outline {
+  opacity: 0.2;
+}
+
+/* Enhanced Border Shine Effect */
+.shine-border {
+  border-width: 4px;
+  border-style: solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #800080, #FF00FF); /* More vibrant colors */
+  animation: shine 1.5s linear infinite; /* Slightly faster animation */
+}
+
+@keyframes shine {
+  0% { border-image-offset: 0; }
+  100% { border-image-offset: 100%; }
+}
